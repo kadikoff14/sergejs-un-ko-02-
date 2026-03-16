@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Sergejs un Ko — Santehnikas pakalpojumi Rīgā un Jūrmalā</title>
+    <meta name="description" content="Profesionāli santehnikas pakalpojumi Rīgā un Jūrmalā. 24/7 avārijas serviss." />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        :root {
+            --navy: #0B1F3A;
+            --blue: #1E6FA5;
+            --sky: #5BB8F5;
+            --white: #FFF;
+            --off: #F0F6FF;
+            --g5: #64748b;
+            --g3: #cbd5e1;
+            --r: 12px;
+            --sh: 0 4px 20px rgba(11, 31, 58, .12);
+            --t: .3s ease
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #334155;
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1.5px;
+            color: var(--navy);
+            line-height: 1.15;
+            text-transform: uppercase
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        ul {
+            list-style: none
+        }
+
+        .ctr {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            font-size: .95rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--t)
+        }
+
+        .btn-p {
+            background: linear-gradient(135deg, var(--blue), var(--sky));
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(91, 184, 245, .35)
+        }
+
+        .btn-p:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(91, 184, 245, .5)
+        }
+
+        .btn-o {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, .4)
+        }
+
+        .btn-o:hover {
+            background: rgba(255, 255, 255, .12);
+            border-color: var(--white)
+        }
+
+        .sl {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--sky);
+            margin-bottom: 10px
+        }
+
+        .sl::before {
+            content: '';
+            width: 28px;
+            height: 3px;
+            background: var(--sky);
+            border-radius: 2px
+        }
+
+        .st {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            margin-bottom: 14px
+        }
+
+        .ss {
+            font-size: 1.05rem;
+            color: var(--g5);
+            max-width: 600px;
+            margin: 0 auto
+        }
+
+        section {
+            padding: 90px 0
+        }
+
+        /* LANG */
+        .lang-bar {
+            background: var(--navy);
+            padding: 6px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1002
+        }
+
+        .lang-bar .ctr {
+            display: flex;
+            justify-content: flex-end;
+            gap: 4px
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, .2);
+            color: rgba(255, 255, 255, .55);
+            padding: 4px 14px;
+            border-radius: 6px;
+            font-size: .78rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Source Sans Pro', sans-serif;
+            transition: var(--t)
+        }
+
+        .lang-btn.active,
+        .lang-btn:hover {
+            background: var(--sky);
+            color: var(--white);
+            border-color: var(--sky)
+        }
+
+        /* EMERGENCY */
+        .emer {
+            background: linear-gradient(90deg, var(--blue), var(--sky));
+            padding: 8px 0;
+            text-align: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: .9rem;
+            position: relative;
+            z-index: 1001
+        }
+
+        .emer a {
+            color: var(--white);
+            text-decoration: underline
+        }
+
+        /* HEADER */
+        .hdr {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 31, 58, .94);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, .06)
+        }
+
+        .hdr-in {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 66px
+        }
+
+        .logo {
+            font-family: 'Anton', sans-serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 2px
+        }
+
+        .logo-i {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--blue), var(--sky));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem
+        }
+
+        .nav {
+            display: flex;
+            gap: 4px
+        }
+
+        .nav a {
+            color: rgba(255, 255, 255, .6);
+            font-size: .88rem;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: var(--t)
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            color: var(--white);
+            background: rgba(255, 255, 255, .08)
+        }
+
+        .hdr-ph {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--sky);
+            font-weight: 600;
+            font-size: .95rem
+        }
+
+        .mt {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px
+        }
+
+        .mt span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: var(--t)
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=1200') center/cover no-repeat
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(11, 31, 58, .88), rgba(30, 111, 165, .7))
+        }
+
+        .hero-c {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(91, 184, 245, .15);
+            border: 1px solid rgba(91, 184, 245, .3);
+            padding: 7px 18px;
+            border-radius: 50px;
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--sky);
+            margin-bottom: 22px
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 7vw, 4.5rem);
+            color: var(--white);
+            margin-bottom: 18px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, .3)
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--sky)
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, .7);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 44px;
+            justify-content: center;
+            padding-top: 36px;
+            border-top: 1px solid rgba(255, 255, 255, .12)
+        }
+
+        .hero-stat h3 {
+            font-size: 2.2rem;
+            color: var(--sky)
+        }
+
+        .hero-stat p {
+            font-size: .82rem;
+            color: rgba(255, 255, 255, .5);
+            font-family: 'Source Sans Pro', sans-serif;
+            text-transform: none;
+            letter-spacing: 0
+        }
+
+        /* SERVICES */
+        .svc {
+            background: var(--off)
+        }
+
+        .svc .hd {
+            text-align: center
+        }
+
+        .sg {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 22px;
+            margin-top: 44px
+        }
+
+        .sc {
+            background: var(--white);
+            border-radius: var(--r);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            transition: var(--t)
+        }
+
+        .sc:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sh);
+            border-color: transparent
+        }
+
+        .sc-img {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            position: relative
+        }
+
+        .sc-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 30%, rgba(11, 31, 58, .6))
+        }
+
+        .sc-body {
+            padding: 28px 24px
+        }
+
+        .sc-icon {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            display: block
+        }
+
+        .sc h3 {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+            letter-spacing: .5px
+        }
+
+        .sc p {
+            color: var(--g5);
+            font-size: .9rem;
+            margin-bottom: 10px
+        }
+
+        .sc-price {
+            font-size: .85rem;
+            font-weight: 600;
+            color: var(--blue)
+        }
+
+        /* WHY */
+        .why {
+            background: var(--white)
+        }
+
+        .why .hd {
+            text-align: center
+        }
+
+        .why-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 44px;
+            align-items: start
+        }
+
+        .why-left {
+            display: flex;
+            flex-direction: column;
+            gap: 24px
+        }
+
+        .rsn {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start
+        }
+
+        .rsn-n {
+            min-width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--blue), var(--sky));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-family: 'Anton', sans-serif;
+            font-size: 1.3rem
+        }
+
+        .rsn h4 {
+            font-size: 1rem;
+            color: var(--navy);
+            margin-bottom: 3px;
+            font-weight: 600
+        }
+
+        .rsn p {
+            font-size: .88rem;
+            color: var(--g5)
+        }
+
+        .why-right {
+            border-radius: var(--r);
+            overflow: hidden
+        }
+
+        .why-img {
+            height: 220px;
+            background: url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800') center/cover;
+            position: relative;
+            border-radius: var(--r) var(--r) 0 0
+        }
+
+        .why-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(11, 31, 58, .35);
+            border-radius: inherit
+        }
+
+        .tp {
+            background: var(--navy);
+            padding: 28px;
+            border-radius: 0 0 var(--r) var(--r)
+        }
+
+        .tp h3 {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 16px
+        }
+
+        .tp-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+            color: rgba(255, 255, 255, .7);
+            font-size: .9rem
+        }
+
+        .tp-item:last-child {
+            border: none
+        }
+
+        .tp-item span:first-child {
+            font-size: 1.2rem
+        }
+
+        /* AREAS */
+        .areas {
+            background: var(--off);
+            position: relative
+        }
+
+        .areas .hd {
+            text-align: center
+        }
+
+        .areas-bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1565623833408-d77e39b88af6?w=800') center/cover;
+            opacity: .06
+        }
+
+        .ag {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-top: 44px;
+            position: relative;
+            z-index: 2
+        }
+
+        .ac {
+            background: linear-gradient(135deg, var(--navy), #0e2a4d);
+            border-radius: var(--r);
+            padding: 36px;
+            color: var(--white);
+            transition: var(--t);
+            position: relative;
+            overflow: hidden
+        }
+
+        .ac:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sh)
+        }
+
+        .ac::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 130px;
+            height: 130px;
+            background: rgba(91, 184, 245, .1);
+            border-radius: 50%
+        }
+
+        .ac .ae {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            display: block
+        }
+
+        .ac h3 {
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 8px
+        }
+
+        .ac>p {
+            color: rgba(255, 255, 255, .55);
+            font-size: .9rem;
+            margin-bottom: 14px
+        }
+
+        .al li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, .7);
+            font-size: .85rem;
+            padding: 3px 0
+        }
+
+        .al li::before {
+            content: '✓';
+            color: var(--sky);
+            font-weight: 700
+        }
+
+        /* QUOTE */
+        .quote {
+            background: var(--white)
+        }
+
+        .quote .hd {
+            text-align: center
+        }
+
+        .qw {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 44px;
+            align-items: start
+        }
+
+        .qi h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px
+        }
+
+        .qi>p {
+            color: var(--g5);
+            margin-bottom: 24px;
+            font-size: .95rem
+        }
+
+        .qp {
+            display: flex;
+            flex-direction: column;
+            gap: 16px
+        }
+
+        .qpi {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start
+        }
+
+        .qpi-i {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            border-radius: 10px;
+            background: rgba(91, 184, 245, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem
+        }
+
+        .qpi h4 {
+            font-size: .92rem;
+            margin-bottom: 2px;
+            font-weight: 600;
+            color: var(--navy)
+        }
+
+        .qpi p {
+            font-size: .83rem;
+            color: var(--g5)
+        }
+
+        .qf {
+            background: var(--off);
+            border-radius: var(--r);
+            padding: 36px;
+            box-shadow: var(--sh);
+            border: 1px solid #e2e8f0
+        }
+
+        .qf h3 {
+            font-size: 1.4rem;
+            margin-bottom: 4px;
+            text-align: center
+        }
+
+        .qf>p {
+            color: var(--g5);
+            font-size: .85rem;
+            margin-bottom: 22px;
+            text-align: center
+        }
+
+        .fg {
+            margin-bottom: 14px
+        }
+
+        .fg label {
+            display: block;
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 4px
+        }
+
+        .fg input,
+        .fg textarea,
+        .fg select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: var(--r);
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: .93rem;
+            transition: var(--t);
+            background: var(--white);
+            color: var(--navy)
+        }
+
+        .fg input:focus,
+        .fg textarea:focus,
+        .fg select:focus {
+            outline: none;
+            border-color: var(--sky);
+            box-shadow: 0 0 0 3px rgba(91, 184, 245, .18)
+        }
+
+        .fg textarea {
+            resize: vertical;
+            min-height: 90px
+        }
+
+        .f-sub {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--blue), var(--sky));
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--t);
+            box-shadow: 0 4px 18px rgba(91, 184, 245, .3)
+        }
+
+        .f-sub:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 26px rgba(91, 184, 245, .45)
+        }
+
+        .f-sub:disabled {
+            opacity: .7;
+            cursor: wait
+        }
+
+        .fn {
+            text-align: center;
+            font-size: .76rem;
+            color: var(--g5);
+            margin-top: 10px
+        }
+
+        /* REVIEWS */
+        .rev {
+            background: var(--off)
+        }
+
+        .rev .hd {
+            text-align: center
+        }
+
+        .rg {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 22px;
+            margin-top: 44px
+        }
+
+        .rc {
+            background: var(--white);
+            border: 1px solid #e2e8f0;
+            border-radius: var(--r);
+            padding: 28px;
+            transition: var(--t)
+        }
+
+        .rc:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sh)
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            letter-spacing: 2px
+        }
+
+        .rc blockquote {
+            font-size: .93rem;
+            color: #475569;
+            line-height: 1.65;
+            margin-bottom: 16px;
+            font-style: italic
+        }
+
+        .ra {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .rav {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue), var(--sky));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: .85rem
+        }
+
+        .rai strong {
+            display: block;
+            font-size: .9rem;
+            color: var(--navy)
+        }
+
+        .rai span {
+            font-size: .78rem;
+            color: var(--g5)
+        }
+
+        /* FOOTER */
+        .ftr {
+            background: var(--navy);
+            color: rgba(255, 255, 255, .6);
+            padding: 56px 0 0
+        }
+
+        .ftr-g {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.2fr;
+            gap: 36px
+        }
+
+        .ftr-brand .logo {
+            margin-bottom: 14px
+        }
+
+        .ftr-brand p {
+            font-size: .86rem;
+            color: rgba(255, 255, 255, .4);
+            max-width: 280px
+        }
+
+        .ftr h4 {
+            color: var(--white);
+            font-family: 'Anton', sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 18px;
+            letter-spacing: 1px
+        }
+
+        .ftr ul li {
+            margin-bottom: 8px
+        }
+
+        .ftr ul li a,
+        .fc li {
+            color: rgba(255, 255, 255, .4);
+            font-size: .86rem;
+            transition: var(--t)
+        }
+
+        .ftr ul li a:hover {
+            color: var(--sky)
+        }
+
+        .fc li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px
+        }
+
+        .fc li span:first-child {
+            font-size: 1rem
+        }
+
+        .ftr-b {
+            margin-top: 40px;
+            padding: 18px 0;
+            border-top: 1px solid rgba(255, 255, 255, .07);
+            text-align: center;
+            font-size: .78rem;
+            color: rgba(255, 255, 255, .28)
+        }
+
+        /* REVEAL */
+        .rv {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .6s ease, transform .6s ease
+        }
+
+        .rv.vis {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        /* MOB NAV */
+        .mn {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(11, 31, 58, .97);
+            backdrop-filter: blur(18px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px
+        }
+
+        .mn.open {
+            display: flex
+        }
+
+        .mn a {
+            color: var(--white);
+            font-family: 'Anton', sans-serif;
+            font-size: 1.6rem;
+            padding: 10px 20px;
+            transition: var(--t);
+            letter-spacing: 2px
+        }
+
+        .mn a:hover {
+            color: var(--sky)
+        }
+
+        .mc {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer
+        }
+
+        @media(max-width:1024px) {
+            .nav {
+                display: none
+            }
+
+            .mt {
+                display: flex
+            }
+
+            .ftr-g {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media(max-width:768px) {
+            section {
+                padding: 70px 0
+            }
+
+            .hdr-ph {
+                display: none
+            }
+
+            .hero-stats {
+                gap: 20px;
+                flex-wrap: wrap
+            }
+
+            .sg,
+            .rg {
+                grid-template-columns: 1fr
+            }
+
+            .why-wrap,
+            .ag,
+            .qw {
+                grid-template-columns: 1fr
+            }
+
+            .ftr-g {
+                grid-template-columns: 1fr;
+                gap: 24px
+            }
+        }
+
+        @media(max-width:480px) {
+            .hero h1 {
+                font-size: 2.4rem
+            }
+
+            .hero-btns {
+                flex-direction: column
+            }
+
+            .hero-btns .btn {
+                width: 100%;
+                justify-content: center
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- LANG -->
+    <div class="lang-bar">
+        <div class="ctr">
+            <button class="lang-btn active" id="btn-lv" onclick="setLang('lv')">LV</button>
+            <button class="lang-btn" id="btn-ru" onclick="setLang('ru')">RU</button>
+            <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+    </div>
+    <!-- EMERGENCY -->
+    <div class="emer"><span>🚨</span> <span data-i="emer"></span> — <a href="tel:+37124407040">+371 24407040</a></div>
+    <!-- HEADER -->
+    <header class="hdr">
+        <div class="ctr hdr-in">
+            <a href="#" class="logo">
+                <div class="logo-i">🔧</div>SERGEJS UN KO
+            </a>
+            <nav class="nav" id="nav">
+                <a href="#services" data-i="nav1"></a><a href="#why" data-i="nav2"></a><a href="#areas"
+                    data-i="nav3"></a><a href="#reviews" data-i="nav4"></a><a href="#quote" data-i="nav5"></a>
+            </nav>
+            <a href="tel:+37124407040" class="hdr-ph">📞 +371 24407040</a>
+            <button class="mt" id="mt" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <!-- MOB NAV -->
+    <div class="mn" id="mn">
+        <button class="mc" id="mc">✕</button>
+        <a href="#services" class="ml" data-i="nav1"></a><a href="#why" class="ml" data-i="nav2"></a><a href="#areas"
+            class="ml" data-i="nav3"></a><a href="#reviews" class="ml" data-i="nav4"></a><a href="#quote" class="ml"
+            data-i="nav5"></a>
+        <a href="tel:+37124407040" class="btn btn-p" style="margin-top:16px">📞 +371 24407040</a>
+    </div>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="ctr">
+            <div class="hero-c">
+                <div class="hero-badge">🛡️ <span data-i="badge"></span></div>
+                <h1 data-i="heroH"></h1>
+                <p data-i="heroP"></p>
+                <div class="hero-btns">
+                    <a href="tel:+37124407040" class="btn btn-p">📞 <span data-i="cta1"></span></a>
+                    <a href="#quote" class="btn btn-o" data-i="cta2"></a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <h3>15+</h3>
+                        <p data-i="st1"></p>
+                    </div>
+                    <div class="hero-stat">
+                        <h3>500+</h3>
+                        <p data-i="st2"></p>
+                    </div>
+                    <div class="hero-stat">
+                        <h3>24/7</h3>
+                        <p data-i="st3"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SERVICES -->
+    <section class="svc" id="services">
+        <div class="ctr">
+            <div class="hd rv"><span class="sl" data-i="srvL"></span>
+                <h2 class="st" data-i="srvT"></h2>
+                <p class="ss" data-i="srvS"></p>
+            </div>
+            <div class="sg">
+                <div class="sc rv">
+                    <div class="sc-img"
+                        style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600')">
+                    </div>
+                    <div class="sc-body"><span class="sc-icon">🔧</span>
+                        <h3 data-i="s1t"></h3>
+                        <p data-i="s1d"></p>
+                        <div class="sc-price" data-i="s1p"></div>
+                    </div>
+                </div>
+                <div class="sc rv">
+                    <div class="sc-body"><span class="sc-icon">🚿</span>
+                        <h3 data-i="s2t"></h3>
+                        <p data-i="s2d"></p>
+                        <div class="sc-price" data-i="s2p"></div>
+                    </div>
+                </div>
+                <div class="sc rv">
+                    <div class="sc-body"><span class="sc-icon">🔥</span>
+                        <h3 data-i="s3t"></h3>
+                        <p data-i="s3d"></p>
+                        <div class="sc-price" data-i="s3p"></div>
+                    </div>
+                </div>
+                <div class="sc rv">
+                    <div class="sc-img"
+                        style="background-image:url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600')">
+                    </div>
+                    <div class="sc-body"><span class="sc-icon">🛁</span>
+                        <h3 data-i="s4t"></h3>
+                        <p data-i="s4d"></p>
+                        <div class="sc-price" data-i="s4p"></div>
+                    </div>
+                </div>
+                <div class="sc rv">
+                    <div class="sc-body"><span class="sc-icon">🚨</span>
+                        <h3 data-i="s5t"></h3>
+                        <p data-i="s5d"></p>
+                        <div class="sc-price" data-i="s5p"></div>
+                    </div>
+                </div>
+                <div class="sc rv">
+                    <div class="sc-body"><span class="sc-icon">🏢</span>
+                        <h3 data-i="s6t"></h3>
+                        <p data-i="s6d"></p>
+                        <div class="sc-price" data-i="s6p"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WHY -->
+    <section class="why" id="why">
+        <div class="ctr">
+            <div class="hd rv"><span class="sl" data-i="whyL"></span>
+                <h2 class="st" data-i="whyT"></h2>
+                <p class="ss" data-i="whyS"></p>
+            </div>
+            <div class="why-wrap">
+                <div class="why-left rv">
+                    <div class="rsn">
+                        <div class="rsn-n">01</div>
+                        <div>
+                            <h4 data-i="w1t"></h4>
+                            <p data-i="w1d"></p>
+                        </div>
+                    </div>
+                    <div class="rsn">
+                        <div class="rsn-n">02</div>
+                        <div>
+                            <h4 data-i="w2t"></h4>
+                            <p data-i="w2d"></p>
+                        </div>
+                    </div>
+                    <div class="rsn">
+                        <div class="rsn-n">03</div>
+                        <div>
+                            <h4 data-i="w3t"></h4>
+                            <p data-i="w3d"></p>
+                        </div>
+                    </div>
+                    <div class="rsn">
+                        <div class="rsn-n">04</div>
+                        <div>
+                            <h4 data-i="w4t"></h4>
+                            <p data-i="w4d"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-right rv">
+                    <div class="why-img"></div>
+                    <div class="tp">
+                        <h3 data-i="tpH"></h3>
+                        <div class="tp-item"><span>🏅</span><span data-i="tp1"></span></div>
+                        <div class="tp-item"><span>🛡️</span><span data-i="tp2"></span></div>
+                        <div class="tp-item"><span>⭐</span><span data-i="tp3"></span></div>
+                        <div class="tp-item"><span>⏰</span><span data-i="tp4"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- AREAS -->
+    <section class="areas" id="areas">
+        <div class="areas-bg"></div>
+        <div class="ctr">
+            <div class="hd rv"><span class="sl" data-i="arL"></span>
+                <h2 class="st" data-i="arT"></h2>
+                <p class="ss" data-i="arS"></p>
+            </div>
+            <div class="ag">
+                <div class="ac rv"><span class="ae">🏙️</span>
+                    <h3>RĪGA</h3>
+                    <p data-i="arRd"></p>
+                    <ul class="al">
+                        <li>Centrs, Vecrīga</li>
+                        <li>Āgenskalns, Pārdaugava</li>
+                        <li>Purvciems, Pļavnieki</li>
+                        <li>Imanta, Zolitūde</li>
+                        <li>Ķengarags, Jugla</li>
+                        <li>Mežciems, Teika</li>
+                    </ul>
+                </div>
+                <div class="ac rv"><span class="ae">🏖️</span>
+                    <h3>JŪRMALA</h3>
+                    <p data-i="arJd"></p>
+                    <ul class="al">
+                        <li>Majori, Dzintari</li>
+                        <li>Bulduri, Lielupe</li>
+                        <li>Asari, Melluži</li>
+                        <li>Ķemeri, Sloka</li>
+                        <li>Kauguri, Jaundubulti</li>
+                        <li>Dubulti, Vaivari</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- QUOTE -->
+    <section class="quote" id="quote">
+        <div class="ctr">
+            <div class="hd rv"><span class="sl" data-i="qL"></span>
+                <h2 class="st" data-i="qT"></h2>
+                <p class="ss" data-i="qS"></p>
+            </div>
+            <div class="qw">
+                <div class="qi rv">
+                    <h3 data-i="qIh"></h3>
+                    <p data-i="qIp"></p>
+                    <div class="qp">
+                        <div class="qpi">
+                            <div class="qpi-i">📋</div>
+                            <div>
+                                <h4 data-i="qp1t"></h4>
+                                <p data-i="qp1d"></p>
+                            </div>
+                        </div>
+                        <div class="qpi">
+                            <div class="qpi-i">⏱️</div>
+                            <div>
+                                <h4 data-i="qp2t"></h4>
+                                <p data-i="qp2d"></p>
+                            </div>
+                        </div>
+                        <div class="qpi">
+                            <div class="qpi-i">🤝</div>
+                            <div>
+                                <h4 data-i="qp3t"></h4>
+                                <p data-i="qp3d"></p>
+                            </div>
+                        </div>
+                        <div class="qpi">
+                            <div class="qpi-i">💬</div>
+                            <div>
+                                <h4>Telegram</h4>
+                                <p><a href="https://t.me/kadikof" style="color:var(--sky)">@kadikof</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="qf rv">
+                    <h3 data-i="qFh"></h3>
+                    <p data-i="qFp"></p>
+                    <div class="fg"><label data-i="fName"></label><input type="text" id="f-name" required /></div>
+                    <div class="fg"><label data-i="fPhone"></label><input type="tel" id="f-phone" required /></div>
+                    <div class="fg"><label data-i="fServ"></label><select id="f-service">
+                            <option value="" data-i="fSO"></option>
+                            <option data-i="s1t"></option>
+                            <option data-i="s2t"></option>
+                            <option data-i="s3t"></option>
+                            <option data-i="s4t"></option>
+                            <option data-i="s5t"></option>
+                            <option data-i="s6t"></option>
+                        </select></div>
+                    <div class="fg"><label data-i="fMsg"></label><textarea id="f-message"></textarea></div>
+                    <button type="button" class="f-sub" onclick="handleSubmit()" data-i="fBtn"></button>
+                    <p class="fn" data-i="fNote"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- REVIEWS -->
+    <section class="rev" id="reviews">
+        <div class="ctr">
+            <div class="hd rv"><span class="sl" data-i="rL"></span>
+                <h2 class="st" data-i="rT"></h2>
+                <p class="ss" data-i="rS"></p>
+            </div>
+            <div class="rg">
+                <div class="rc rv">
+                    <div class="stars">★★★★★</div>
+                    <blockquote data-i="r1q"></blockquote>
+                    <div class="ra">
+                        <div class="rav">AK</div>
+                        <div class="rai"><strong>Anna Kalniņa</strong><span>Rīga, Purvciems</span></div>
+                    </div>
+                </div>
+                <div class="rc rv">
+                    <div class="stars">★★★★★</div>
+                    <blockquote data-i="r2q"></blockquote>
+                    <div class="ra">
+                        <div class="rav">ИС</div>
+                        <div class="rai"><strong>Игорь Смирнов</strong><span>Rīga, Centrs</span></div>
+                    </div>
+                </div>
+                <div class="rc rv">
+                    <div class="stars">★★★★★</div>
+                    <blockquote data-i="r3q"></blockquote>
+                    <div class="ra">
+                        <div class="rav">MB</div>
+                        <div class="rai"><strong>Mārtiņš Bērziņš</strong><span>Jūrmala, Dzintari</span></div>
+                    </div>
+                </div>
+                <div class="rc rv">
+                    <div class="stars">★★★★★</div>
+                    <blockquote data-i="r4q"></blockquote>
+                    <div class="ra">
+                        <div class="rav">LS</div>
+                        <div class="rai"><strong>Laura Sproģe</strong><span>Rīga, Āgenskalns</span></div>
+                    </div>
+                </div>
+                <div class="rc rv">
+                    <div class="stars">★★★★★</div>
+                    <blockquote data-i="r5q"></blockquote>
+                    <div class="ra">
+                        <div class="rav">ОП</div>
+                        <div class="rai"><strong>Олег Петров</strong><span>Jūrmala, Majori</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="ftr">
+        <div class="ctr">
+            <div class="ftr-g">
+                <div class="ftr-brand"><a href="#" class="logo">
+                        <div class="logo-i">🔧</div>SERGEJS UN KO
+                    </a>
+                    <p data-i="ftB"></p>
+                </div>
+                <div>
+                    <h4 data-i="ftN"></h4>
+                    <ul>
+                        <li><a href="#services" data-i="nav1"></a></li>
+                        <li><a href="#why" data-i="nav2"></a></li>
+                        <li><a href="#areas" data-i="nav3"></a></li>
+                        <li><a href="#reviews" data-i="nav4"></a></li>
+                        <li><a href="#quote" data-i="nav5"></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i="ftS"></h4>
+                    <ul>
+                        <li><a href="#services" data-i="s1t"></a></li>
+                        <li><a href="#services" data-i="s2t"></a></li>
+                        <li><a href="#services" data-i="s3t"></a></li>
+                        <li><a href="#services" data-i="s5t"></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i="ftC"></h4>
+                    <ul class="fc">
+                        <li><span>📞</span><a href="tel:+37124407040" style="color:rgba(255,255,255,.5)">+371
+                                24407040</a></li>
+                        <li><span>💬</span><a href="https://t.me/kadikof"
+                                style="color:rgba(255,255,255,.5)">@kadikof</a></li>
+                        <li><span>✉️</span><span>info@sergejsunko.lv</span></li>
+                        <li><span>🕐</span><span data-i="ftH"></span></li>
+                        <li><span>🚨</span><span data-i="ftE"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ftr-b">© 2025 Sergejs un Ko. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        const TELEGRAM_BOT_TOKEN = '8535076280:AAEqGAMnnMEMcSiGyTdcU_vCCYisMWCsqSQ';
+
+        // Sends to personal account AND group chat simultaneously
+        const TELEGRAM_CHAT_IDS = [
+            '684742118',    // Sergejs personal account
+            '-5016183045',  // Sergejs un Ko group chat
+        ];
+
+        async function handleSubmit() {
+            const name = document.getElementById('f-name').value.trim();
+            const phone = document.getElementById('f-phone').value.trim();
+            const service = document.getElementById('f-service').value.trim();
+            const message = document.getElementById('f-message').value.trim();
+            const lang = document.querySelector('.lang-btn.active')?.id?.replace('btn-', '') || 'lv';
+
+            const labels = {
+                lv: { empty: 'Lūdzu aizpildiet vārdu un tālruni!', sending: 'Sūta...', ok: '✅ Paldies! Mēs sazināsimies drīzumā.\n📞 +371 24407040\n💬 Telegram: @kadikof', err: '❌ Kļūda. Lūdzu zvaniet: +371 24407040' },
+                ru: { empty: 'Введите имя и телефон!', sending: 'Отправка...', ok: '✅ Спасибо! Мы скоро свяжемся.\n📞 +371 24407040\n💬 Telegram: @kadikof', err: '❌ Ошибка. Звоните: +371 24407040' },
+                en: { empty: 'Please fill in name and phone!', sending: 'Sending...', ok: '✅ Thank you! We will be in touch.\n📞 +371 24407040\n💬 Telegram: @kadikof', err: '❌ Error. Please call: +371 24407040' }
+            };
+            const t = labels[lang] || labels.lv;
+
+            if (!name || !phone) { alert(t.empty); return; }
+
+            const btns = document.querySelectorAll('button[onclick="handleSubmit()"]');
+            btns.forEach(b => { b.disabled = true; b.textContent = t.sending; });
+
+            const text = `🔧 *Jauns pieprasījums / New enquiry*\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n🛠 *Service:* ${service || '—'}\n📝 *Message:* ${message || '—'}\n🌐 *Lang:* ${lang.toUpperCase()}\n⏰ ${new Date().toLocaleString('lv-LV', { timeZone: 'Europe/Riga' })}`;
+
+            try {
+                const results = await Promise.all(
+                    TELEGRAM_CHAT_IDS.map(chat_id =>
+                        fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ chat_id, text, parse_mode: 'Markdown' })
+                        }).then(r => r.json())
+                    )
+                );
+                const anySuccess = results.some(r => r.ok);
+                if (anySuccess) {
+                    alert(t.ok);
+                    document.getElementById('f-name').value = '';
+                    document.getElementById('f-phone').value = '';
+                    document.getElementById('f-service').selectedIndex = 0;
+                    document.getElementById('f-message').value = '';
+                } else {
+                    alert(t.err + '\n\nDebug: ' + JSON.stringify(results));
+                }
+            } catch (e) {
+                alert(t.err + '\n\nDebug: ' + e.message);
+            } finally {
+                btns.forEach(b => { b.disabled = false; });
+            }
+        }
+
+        const T = {
+            lv: {
+                nav1: 'Pakalpojumi', nav2: 'Kāpēc mēs', nav3: 'Zonas', nav4: 'Atsauksmes', nav5: 'Pieteikums',
+                emer: '24/7 ārkārtas santehnikas palīdzība', badge: 'Licencēti un apdrošināti speciālisti',
+                heroH: 'PROFESIONĀLA <em>SANTEHNIKA</em>, KURAI VARAT UZTICĒTIES',
+                heroP: 'Ātra un uzticama santehnikas palīdzība Rīgā un Jūrmalā. No avārijas remonta līdz vannas istabas renovācijai — mēs esam pieejami 24/7.',
+                cta1: 'Zvaniet tagad', cta2: 'Bezmaksas piedāvājums', st1: 'Gadu pieredze', st2: 'Apmierināti klienti', st3: 'Pieejamība',
+                srvL: 'Ko mēs darām', srvT: 'MŪSU PAKALPOJUMI', srvS: 'No vienkāršiem remontiem līdz sarežģītām instalācijām — garantējam kvalitatīvu darbu.',
+                s1t: 'Cauruļu remonts', s1d: 'Diagnosticējam un novēršam visas cauruļvadu problēmas ātri un kvalitatīvi.', s1p: 'No €40',
+                s2t: 'Kanalizācijas tīrīšana', s2d: 'Profesionāla hidrauliskā tīrīšana un mehāniskās metodes pilnas plūsmas atjaunošanai.', s2p: 'No €35',
+                s3t: 'Apkure un katli', s3d: 'Apkures katlu uzstādīšana, apkope un remonts. Siltums visu gadu.', s3p: 'No €60',
+                s4t: 'Vannas istabas renovācija', s4d: 'Pilns renovācijas serviss — no plānošanas līdz gatavam rezultātam.', s4p: 'Pēc piepras.',
+                s5t: 'Avārijas serviss 24/7', s5d: 'Pieejami jebkurā laikā — arī brīvdienās un svētkos.', s5p: 'No €50',
+                s6t: 'Komerciālā santehnika', s6d: 'Profesionāli risinājumi birojiem, restorāniem un veikaliem.', s6p: 'Pēc piepras.',
+                whyL: 'Kāpēc Sergejs un Ko', whyT: 'KĀPĒC KLIENTI IZVĒLAS MŪS', whyS: 'Apvienojam pieredzi, ātrumu un caurspīdīgumu.',
+                w1t: 'Ātra reaģēšana', w1d: 'Ierašanās 45 min. avārijas gadījumos Rīgā, 60 min. Jūrmalā.',
+                w2t: 'Licencēti meistari', w2d: 'Katrs speciālists ir licencēts, apmācīts un apdrošināts.',
+                w3t: 'Caurspīdīgas cenas', w3d: 'Skaidrs piedāvājums pirms darba uzsākšanas. Nekādu slēptu maksu.',
+                w4t: 'Garantija darbam', w4d: 'Viss darbs garantēts. Ja kaut kas nav kārtībā — labojam bez maksas.',
+                tpH: 'UZTICAMĪBA', tp1: 'Santehniķu asociācijas biedrs', tp2: 'Pilna civiltiesiskā apdrošināšana', tp3: '4.9/5 klientu vērtējums', tp4: '24/7 avārijas gatavība',
+                arL: 'Apkalpošanas zonas', arT: 'RĪGA UN JŪRMALA', arS: 'Divas pilsētas, viens uzticams santehnikas partneris.',
+                arRd: 'Pilna apkalpošana visā Rīgā un apkārtnē.', arJd: 'Apkalpojam visu Jūrmalas teritoriju.',
+                qL: 'Bezmaksas piedāvājums', qT: 'SAŅEMIET BEZMAKSAS PIEDĀVĀJUMU', qS: 'Aprakstiet problēmu — sagatavosim piedāvājumu bez saistībām.',
+                qIh: 'Kāpēc pieprasīt piedāvājumu?', qIp: 'Ātra, bezmaksas aplēse bez saistībām.',
+                qp1t: 'Detalizēta aplēse', qp1d: 'Skaidra izmaksu aplēse bez slēptām cenām.',
+                qp2t: 'Ātra atbilde', qp2d: 'Atbildam 2 stundu laikā darba laikā.',
+                qp3t: 'Bez saistībām', qp3d: 'Piedāvājums ir 100% bez saistībām.',
+                qFh: 'JŪSU PIEPRASĪJUMS', qFp: 'Aizpildiet formu — sazināsimies drīzumā.',
+                fName: 'Jūsu vārds', fPhone: 'Tālrunis', fServ: 'Pakalpojums', fSO: 'Izvēlieties...', fMsg: 'Ziņojums', fBtn: '🚀 Nosūtīt pieprasījumu', fNote: '🔒 Jūsu dati ir drošībā.',
+                rL: 'Atsauksmes', rT: 'KO SAKA MŪSU KLIENTI', rS: 'Uzziniet, ko par mums saka māju un uzņēmumu īpašnieki.',
+                r1q: '"Virtuvē plīsa caurule pulksten 23 svētdienā. Ieradās 30 minūtēs un visu salaboja. Profesionāli un par saprātīgu cenu!"',
+                r2q: '"Заказывал установку бойлера. Мастер приехал вовремя, всё сделал аккуратно. Рекомендую!"',
+                r3q: '"Pasūtījām pilnu vannas renovāciju vasarnīcā. Rezultāts pārspēja cerības — laikā un budžetā!"',
+                r4q: '"Regulāri izmantojam apkopes pakalpojumus birojā. Vienmēr precīzi un uzticami. Labākie!"',
+                r5q: '"Вызывали на прочистку канализации в ресторане. Приехали быстро, решили за час. Отличный сервис!"',
+                ftB: 'Uzticams santehnikas partneris Rīgā un Jūrmalā kopš 2010.', ftN: 'NAVIGĀCIJA', ftS: 'PAKALPOJUMI', ftC: 'KONTAKTI', ftH: 'P.–S. 8:00–20:00', ftE: 'Avārijas: 24/7'
+            },
+            ru: {
+                nav1: 'Услуги', nav2: 'Почему мы', nav3: 'Зоны', nav4: 'Отзывы', nav5: 'Заявка',
+                emer: '24/7 аварийная сантехническая помощь', badge: 'Лицензированные и застрахованные специалисты',
+                heroH: 'ПРОФЕССИОНАЛЬНАЯ <em>САНТЕХНИКА</em>, КОТОРОЙ МОЖНО ДОВЕРЯТЬ',
+                heroP: 'Быстрая и надёжная сантехническая помощь в Риге и Юрмале. От аварийного ремонта до реновации ванной — мы доступны 24/7.',
+                cta1: 'Позвоните сейчас', cta2: 'Бесплатная оценка', st1: 'Лет опыта', st2: 'Довольных клиентов', st3: 'Доступность',
+                srvL: 'Что мы делаем', srvT: 'НАШИ УСЛУГИ', srvS: 'От простого ремонта до сложных инсталляций — гарантируем качество.',
+                s1t: 'Ремонт труб', s1d: 'Диагностируем и устраняем любые проблемы с трубами быстро и качественно.', s1p: 'От €40',
+                s2t: 'Прочистка канализации', s2d: 'Профессиональная гидравлическая и механическая прочистка для полного восстановления потока.', s2p: 'От €35',
+                s3t: 'Отопление и котлы', s3d: 'Установка, обслуживание и ремонт отопительных котлов. Тепло круглый год.', s3p: 'От €60',
+                s4t: 'Ремонт ванной', s4d: 'Полная реновация ванной — от планировки до финального результата.', s4p: 'По запросу',
+                s5t: 'Аварийный 24/7', s5d: 'Доступны круглосуточно, включая выходные и праздники.', s5p: 'От €50',
+                s6t: 'Коммерч. сантехника', s6d: 'Профессиональные решения для офисов, ресторанов и магазинов.', s6p: 'По запросу',
+                whyL: 'Почему Sergejs un Ko', whyT: 'ПОЧЕМУ ВЫБИРАЮТ НАС', whyS: 'Сочетаем опыт, скорость и прозрачность.',
+                w1t: 'Быстрое реагирование', w1d: 'Приезжаем за 45 мин. при аварии в Риге, 60 мин. в Юрмале.',
+                w2t: 'Лицензированные мастера', w2d: 'Каждый специалист лицензирован, обучен и застрахован.',
+                w3t: 'Прозрачные цены', w3d: 'Чёткая смета до начала работ. Без скрытых платежей.',
+                w4t: 'Гарантия на работу', w4d: 'Вся работа гарантирована. Если что-то не так — исправим бесплатно.',
+                tpH: 'ДОВЕРИЕ', tp1: 'Член ассоциации сантехников', tp2: 'Полная гражданская страховка', tp3: 'Рейтинг клиентов 4.9/5', tp4: 'Аварийная готовность 24/7',
+                arL: 'Зоны обслуживания', arT: 'РИГА И ЮРМАЛА', arS: 'Два города — один надёжный партнёр.',
+                arRd: 'Полное обслуживание по всей Риге.', arJd: 'Обслуживаем всю территорию Юрмалы.',
+                qL: 'Бесплатная оценка', qT: 'ПОЛУЧИТЕ БЕСПЛАТНУЮ ОЦЕНКУ', qS: 'Расскажите о проблеме — подготовим смету без обязательств.',
+                qIh: 'Зачем запрашивать оценку?', qIp: 'Быстрая, бесплатная оценка без обязательств.',
+                qp1t: 'Детальная смета', qp1d: 'Чёткая оценка стоимости без скрытых платежей.',
+                qp2t: 'Быстрый ответ', qp2d: 'Отвечаем в течение 2 часов в рабочее время.',
+                qp3t: 'Без обязательств', qp3d: 'Оценка 100% без обязательств.',
+                qFh: 'ВАША ЗАЯВКА', qFp: 'Заполните форму — мы свяжемся с вами.',
+                fName: 'Ваше имя', fPhone: 'Телефон', fServ: 'Услуга', fSO: 'Выберите...', fMsg: 'Сообщение', fBtn: '🚀 Отправить заявку', fNote: '🔒 Ваши данные в безопасности.',
+                rL: 'Отзывы', rT: 'ЧТО ГОВОРЯТ КЛИЕНТЫ', rS: 'Отзывы домовладельцев и предпринимателей Риги и Юрмалы.',
+                r1q: '"На кухне лопнула труба в 11 вечера в воскресенье. Приехали за 30 минут и всё починили. Профессионально!"',
+                r2q: '"Заказывал установку бойлера. Мастер приехал вовремя, всё аккуратно. Рекомендую!"',
+                r3q: '"Заказали реновацию ванной на даче в Юрмале. Результат превзошёл ожидания — в срок и в бюджет!"',
+                r4q: '"Регулярно пользуемся для обслуживания офиса. Всегда точные и надёжные. Лучшие в Риге!"',
+                r5q: '"Вызывали на прочистку канализации в ресторане. Приехали быстро, решили за час. Отлично!"',
+                ftB: 'Надёжный сантехнический партнёр в Риге и Юрмале с 2010.', ftN: 'НАВИГАЦИЯ', ftS: 'УСЛУГИ', ftC: 'КОНТАКТЫ', ftH: 'Пн–Сб 8:00–20:00', ftE: 'Аварии: 24/7'
+            },
+            en: {
+                nav1: 'Services', nav2: 'Why Us', nav3: 'Areas', nav4: 'Reviews', nav5: 'Get Quote',
+                emer: '24/7 Emergency Plumbing Service', badge: 'Licensed & Insured Professionals',
+                heroH: 'PROFESSIONAL <em>PLUMBING</em> YOU CAN TRUST',
+                heroP: 'Fast, reliable plumbing across Riga and Jūrmala. From emergency repairs to full renovations — available 24/7.',
+                cta1: 'Call Now', cta2: 'Get a Free Quote', st1: 'Years Experience', st2: 'Happy Clients', st3: 'Availability',
+                srvL: 'What We Do', srvT: 'OUR SERVICES', srvS: 'From simple fixes to complex installations — quality work guaranteed.',
+                s1t: 'Pipe Repair', s1d: 'We diagnose and fix all piping issues quickly and professionally.', s1p: 'From €40',
+                s2t: 'Drain Cleaning', s2d: 'Professional hydro-jetting and mechanical cleaning to restore full flow.', s2p: 'From €35',
+                s3t: 'Heating & Boilers', s3d: 'Boiler installation, maintenance, and repair. Warmth all year round.', s3p: 'From €60',
+                s4t: 'Bathroom Renovation', s4d: 'Full renovation service — from design to final installation.', s4p: 'On request',
+                s5t: 'Emergency 24/7', s5d: 'Available around the clock, weekends and holidays included.', s5p: 'From €50',
+                s6t: 'Commercial Plumbing', s6d: 'Professional solutions for offices, restaurants, and retail spaces.', s6p: 'On request',
+                whyL: 'Why Sergejs un Ko', whyT: 'WHY CLIENTS CHOOSE US', whyS: 'We combine expertise, speed, and transparency.',
+                w1t: 'Fast Response', w1d: 'We arrive within 45 min for emergencies in Riga, 60 min in Jūrmala.',
+                w2t: 'Licensed Professionals', w2d: 'Every technician is licensed, trained, and insured.',
+                w3t: 'Transparent Pricing', w3d: 'Clear quote before work begins. No hidden fees ever.',
+                w4t: 'Work Guarantee', w4d: 'All work guaranteed. Not right? We fix it free of charge.',
+                tpH: 'TRUST & CREDENTIALS', tp1: 'Plumbing association member', tp2: 'Full civil liability insurance', tp3: '4.9/5 customer rating', tp4: '24/7 emergency readiness',
+                arL: 'Coverage Area', arT: 'RIGA & JŪRMALA', arS: 'Two cities, one trusted plumbing partner.',
+                arRd: 'Full plumbing coverage across the capital.', arJd: 'Serving the entire Jūrmala territory.',
+                qL: 'Free Estimate', qT: 'GET A FREE QUOTE', qS: 'Tell us your issue — we\'ll prepare a no-obligation estimate.',
+                qIh: 'Why request a quote?', qIp: 'Fast, free, and zero-obligation estimate.',
+                qp1t: 'Detailed Estimate', qp1d: 'Clear cost breakdown — no hidden charges.',
+                qp2t: 'Fast Response', qp2d: 'We respond within 2 hours during business hours.',
+                qp3t: 'No Obligation', qp3d: 'Our quotes are 100% obligation-free.',
+                qFh: 'YOUR REQUEST', qFp: 'Fill out the form — we\'ll be in touch shortly.',
+                fName: 'Your Name', fPhone: 'Phone', fServ: 'Service', fSO: 'Select...', fMsg: 'Message', fBtn: '🚀 Send Request', fNote: '🔒 Your data is safe.',
+                rL: 'Reviews', rT: 'WHAT OUR CLIENTS SAY', rS: 'Hear from homeowners and businesses across Riga and Jūrmala.',
+                r1q: '"A pipe burst at 11 PM on Sunday. They arrived in 30 minutes and fixed everything. Professional and fairly priced!"',
+                r2q: '"Had a boiler installed. Technician arrived on time, did everything neatly. Highly recommend!"',
+                r3q: '"Full bathroom renovation at our Jūrmala summer house. Exceeded expectations — on time and on budget!"',
+                r4q: '"We use them regularly for our office. Always precise, reliable, and friendly. The best in Riga!"',
+                r5q: '"Called for a drain blockage at our restaurant. Arrived fast, solved it in an hour. Excellent service!"',
+                ftB: 'Trusted plumbing partner in Riga and Jūrmala since 2010.', ftN: 'NAVIGATION', ftS: 'SERVICES', ftC: 'CONTACT', ftH: 'Mon–Sat 8:00–20:00', ftE: 'Emergencies: 24/7'
+            }
+        };
+
+        let lang = 'lv';
+        function setLang(l) {
+            lang = l;
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.id === 'btn-' + l));
+            document.querySelectorAll('[data-i]').forEach(el => {
+                const k = el.getAttribute('data-i');
+                if (T[l] && T[l][k]) { if (T[l][k].includes('<em>')) el.innerHTML = T[l][k]; else el.textContent = T[l][k] }
+            });
+        }
+        setLang('lv');
+
+        /* Sticky header */
+        const hdr = document.querySelector('.hdr');
+        window.addEventListener('scroll', () => hdr.style.boxShadow = scrollY > 50 ? '0 4px 30px rgba(0,0,0,.25)' : 'none');
+
+        /* Mobile nav */
+        const mn = document.getElementById('mn');
+        document.getElementById('mt').onclick = () => mn.classList.add('open');
+        document.getElementById('mc').onclick = () => mn.classList.remove('open');
+        document.querySelectorAll('.ml').forEach(a => a.onclick = () => mn.classList.remove('open'));
+
+        /* Smooth scroll */
+        document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', function (e) { e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if (t) window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' }) }));
+
+        /* Active nav */
+        const secs = document.querySelectorAll('section[id]'), nls = document.querySelectorAll('.nav a');
+        window.addEventListener('scroll', () => { let c = ''; secs.forEach(s => { if (scrollY >= s.offsetTop - 140) c = s.id }); nls.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + c)) });
+
+        /* Scroll reveal */
+        const ro = new IntersectionObserver(es => { es.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('vis'), i * 50); ro.unobserve(e.target) } }) }, { threshold: .08 });
+        document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+    </script>
+</body>
+
+</html>
